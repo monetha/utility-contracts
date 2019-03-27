@@ -9,7 +9,7 @@ function shouldBehaveLikeCanReclaimTokens(OTHER) {
             let contractOwner = await this.mock.owner();
             const contractBal = await this.token.balanceOf(this.mock.address);
 
-            const tx = await this.mock.reclaimTokenTo(this.token.address, OTHER, contractBal/2, {from: contractOwner})
+            const tx = await this.mock.reclaimTokenTo(this.token.address, OTHER, contractBal/2, {from: contractOwner});
         
             expectEvent.inLogs(tx.logs, "ReclaimTokens", {
                 to: OTHER,

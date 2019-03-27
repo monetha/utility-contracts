@@ -9,7 +9,7 @@ function shouldBehaveLikeCanReclaimEther(OTHER) {
             let contractOwner = await this.mock.owner();
             const contractBal = new BigNumber(web3.eth.getBalance(this.mock.address));
 
-            const tx = await this.mock.reclaimEtherTo(OTHER, contractBal / 2, {from: contractOwner})
+            const tx = await this.mock.reclaimEtherTo(OTHER, contractBal / 2, {from: contractOwner});
 
             expectEvent.inLogs(tx.logs, "ReclaimEther", {
                 to: OTHER,
