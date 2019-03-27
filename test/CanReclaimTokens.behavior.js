@@ -1,6 +1,5 @@
-import Revert from "./helpers/VMExceptionRevert";
+const Revert = require("./helpers/VMExceptionRevert");
 
-const {BigNumber} = require('./helpers/setup');
 const expectEvent = require('./helpers/expectEvent');
 
 function shouldBehaveLikeCanReclaimTokens(OTHER) {
